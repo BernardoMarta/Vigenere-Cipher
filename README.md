@@ -20,58 +20,34 @@ The project consists of two main functions for each version:
 You need Python 3 installed. You can check your Python version by running:
 
 python --version
-text
 
 ### Installation
 Clone the repository or download the Python file manually:
+
 git clone https://github.com/BernardoMarta/Vigenere-Cipher
 cd Vigenere-Cipher
-text
+
 
 ## Usage
 
 ### Using the First Version:
-key = "key"
-plaintext = "hello"
-ciphertext = vigenere(key, plaintext)
-print("Encrypted text:", ciphertext)
-text
+To use the first version of the Vigenère Cipher, refer to the function definitions in the code.
 
 ### Using the Second Version:
-key = "key"
-plaintext = "hello"
-ciphertext = vigenere2(key, plaintext)
-print("Encrypted text (version 2):", ciphertext)
-text
+To use the second version of the Vigenère Cipher, refer to the function definitions in the code.
 
 ## Example
 
 **Input:**
-key = "key"
-text = "hello"
-text
+Example input values are provided in the code comments.
 
 **Output (Both Versions):**
-Encrypted text: rijvs
-text
+Example output is provided in the code comments.
 
 ## Features
 - Two different implementations of the Vigenère Cipher
 - Supports lowercase alphabetic input
 - Simple and easy-to-understand code structure
-
-## Code Snippet
-ALPHABET='abcdefghijklmnopqrstuvwxyz'
-def vigenere(chave,txt):
-txt_cifrado=''
-for i in range(len(txt)):
-txt_cifrado += rodar(chave[i%len(chave)],txt[i])
-return txt_cifrado
-def rodar(chave2,letra):
-n=ord(letra)-ord('a')
-nova_letra = chr((n+ord(chave2)-ord('a'))%26+ord('a'))
-return nova_letra
-text
 
 ## Contributing
 Feel free to fork this repository and submit pull requests to [BernardoMarta's repository](https://github.com/BernardoMarta/Vigenere-Cipher)!
