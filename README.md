@@ -1,89 +1,85 @@
+# Vigenère Cipher Implementation
 
-# Vigenère Cipher Encryption
+## About the Project
+This project implements the Vigenère Cipher, a polyalphabetic substitution cipher used for encrypting alphabetic text. It includes two different versions of the cipher implementation.
 
-## 🔐 About the Project
-This project implements the **Vigenère Cipher**, a method of encrypting alphabetic text using a series of Caesar ciphers based on the letters of a keyword. It enhances security over the traditional Caesar cipher by using a multi-letter shifting system.
+## How It Works
+The project consists of two main functions for each version:
 
-This project includes two versions of the Vigenère Cipher:
-1. **First Version** - Uses ASCII values (`ord` and `chr`) to compute the shift.
-2. **Second Version** - Uses a predefined alphabet string (`ALPHABET.index()`) to determine shifts.
+1. **First Version** (`vigenere` and `rodar`):
+   - Uses ASCII values to compute the shift.
+   - Implements the cipher using character-to-integer conversions.
 
-Each version is implemented in the `vigenere_cipher_functions.py` file.
+2. **Second Version** (`vigenere2` and `rodar2`):
+   - Uses a predefined alphabet string to determine shifts.
+   - Implements the cipher using index-based operations on the alphabet.
 
-## 📜 How It Works
-- **First Version** (`vigenere()` and `rodar()`): This version uses ASCII values to calculate the letter shifts.
-- **Second Version** (`vigenere2()` and `rodar2()`): This version uses an alphabet string to determine shifts.
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 You need Python 3 installed. You can check your Python version by running:
-```bash
+
 python --version
-```
+text
 
 ### Installation
 Clone the repository or download the Python file manually:
-```bash
 git clone https://github.com/BernardoMarta/Vigenere-Cipher
 cd Vigenere-Cipher
-```
+text
 
-You can also download the `vigenere_cipher_functions.py` file directly.
-
-## 🛠️ Usage
+## Usage
 
 ### Using the First Version:
-To use the first version of the Vigenère Cipher, import and call the `vigenere()` function from `vigenere_cipher_functions.py`:
-```python
-from vigenere_cipher_functions import vigenere
-
-key = "keyword"
+key = "key"
 plaintext = "hello"
 ciphertext = vigenere(key, plaintext)
 print("Encrypted text:", ciphertext)
-```
+text
 
 ### Using the Second Version:
-To use the second version, import and call the `vigenere2()` function:
-```python
-from vigenere_cipher_functions import vigenere2
-
-key = "keyword"
+key = "key"
 plaintext = "hello"
 ciphertext = vigenere2(key, plaintext)
 print("Encrypted text (version 2):", ciphertext)
-```
+text
 
-## 🔄 Example
+## Example
+
 **Input:**
-```python
 key = "key"
 text = "hello"
-```
+text
 
-**Output (First Version):**
-```text
-Encrypted text: riijg
-```
+**Output (Both Versions):**
+Encrypted text: rijvs
+text
 
-**Output (Second Version):**
-```text
-Encrypted text (version 2): riijg
-```
+## Features
+- Two different implementations of the Vigenère Cipher
+- Supports lowercase alphabetic input
+- Simple and easy-to-understand code structure
 
-## 📌 Features
-✅ Implements Vigenère Cipher  
-✅ Two different implementations (ASCII-based and ALPHABET-based)  
-✅ Simple, lightweight, and easy to use  
+## Code Snippet
+ALPHABET='abcdefghijklmnopqrstuvwxyz'
+def vigenere(chave,txt):
+txt_cifrado=''
+for i in range(len(txt)):
+txt_cifrado += rodar(chave[i%len(chave)],txt[i])
+return txt_cifrado
+def rodar(chave2,letra):
+n=ord(letra)-ord('a')
+nova_letra = chr((n+ord(chave2)-ord('a'))%26+ord('a'))
+return nova_letra
+text
 
-## 🤝 Contributing
+## Contributing
 Feel free to fork this repository and submit pull requests to [BernardoMarta's repository](https://github.com/BernardoMarta/Vigenere-Cipher)!
 
 You can reach me at: **bernardomarta@outlook.pt**
 
-## 📜 License
+## License
 This project is licensed under the MIT License.
 
-## 🌟 Acknowledgments
-Thanks to the cryptography community for inspiration!
+## Acknowledgments
+Thanks to the cryptography community for the Vigenère Cipher concept and implementation ideas.
